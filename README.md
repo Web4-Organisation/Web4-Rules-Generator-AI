@@ -1,6 +1,6 @@
-# Guildelines AI
+# Web4 Communitz Guidelines
 
-Guildelines AI is a Next.js application that leverages the Gemini API via Genkit to generate draft community rule sets. Administrators can select predefined tags or provide a custom prompt to describe their community, and the AI will generate a tailored set of guidelines. These rules can then be reviewed, edited, and exported as a Markdown file, ready for use in GitHub repositories or other platforms.
+Web4 Communitz Guidelines is a Next.js application, powered by [Linkspreed](https://linkspreed.com), that leverages the Gemini API via Genkit to generate draft community rule sets for [Web4](https://web4.one) communities. Administrators can select predefined tags or provide a custom prompt to describe their community, and the AI will generate a tailored set of guidelines. These rules can then be reviewed, edited, and exported as a Markdown file, ready for use in GitHub repositories or other platforms.
 
 ## Features
 
@@ -33,8 +33,8 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/guildelines-ai.git
-    cd guildelines-ai
+    git clone https://github.com/your-username/web4-communitz-guidelines.git # (You might need to update this if your repo name changed)
+    cd web4-communitz-guidelines
     ```
 
 2.  **Install dependencies:**
@@ -84,10 +84,10 @@ Follow these instructions to get a copy of the project up and running on your lo
 2.  **Choose your generation method:**
     *   **Generate with Tags**: Select one or more predefined tags that best describe your community.
     *   **Inspire Me (Custom Prompt)**: Write a description of your community or the type of rules you're looking for.
-3.  **Click the "Generate Rules" button.**
+3.  **Click the "Generate Rules" / "Generate Guidelines" button.**
 4.  **Review and Edit**: The AI-generated rules will appear in the text editor. You can modify them as needed.
 5.  **Export Rules**:
-    *   Click "Copy Rules" to copy the text to your clipboard.
+    *   Click "Copy Guidelines" to copy the text to your clipboard.
     *   Click "Download as Markdown" to save the rules as a `.md` file. This file will include a basic structure suitable for a community's README.
 
 ## AI Configuration
@@ -125,4 +125,4 @@ This project does not currently include a LICENSE file. You may add one if desir
 
 ---
 
-Happy community building!
+Happy Web4 community building!

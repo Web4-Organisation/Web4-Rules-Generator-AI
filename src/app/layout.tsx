@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Guildelines AI',
-  description: 'Generate community guidelines with AI',
+  title: 'Web4 Communitz Guidelines',
+  description: 'Generate Web4 community guidelines with AI, powered by Linkspreed',
 };
 
 export default function RootLayout({

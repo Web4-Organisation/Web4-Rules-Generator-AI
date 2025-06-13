@@ -84,8 +84,8 @@ export default function GuildelinesGenerator() {
       const result = await generateCommunityRulesFromTags({ tags: selectedTags });
       setGeneratedRules(result.rules);
       toast({
-        title: "Rules Generated!",
-        description: "Review and customize your new community guidelines.",
+        title: "Guidelines Generated!",
+        description: "Review and customize your new Web4 Communitz guidelines.",
       });
     } catch (error) {
       console.error("Error generating rules from tags:", error);
@@ -105,8 +105,8 @@ export default function GuildelinesGenerator() {
       const result = await generateCommunityRules({ prompt: data.customPrompt });
       setGeneratedRules(result.rules);
       toast({
-        title: "Rules Generated!",
-        description: "Review and customize your new community guidelines.",
+        title: "Guidelines Generated!",
+        description: "Review and customize your new Web4 Communitz guidelines.",
       });
     } catch (error) {
       console.error("Error generating rules from prompt:", error);
@@ -128,13 +128,13 @@ export default function GuildelinesGenerator() {
       toast({
         variant: "destructive",
         title: "Nothing to Copy",
-        description: "Generate some rules first!",
+        description: "Generate some guidelines first!",
       });
       return;
     }
     navigator.clipboard.writeText(generatedRules);
     toast({
-      title: "Rules Copied!",
+      title: "Guidelines Copied!",
       description: "Guidelines copied to your clipboard.",
     });
   };
@@ -144,30 +144,30 @@ export default function GuildelinesGenerator() {
       toast({
         variant: "destructive",
         title: "Nothing to Download",
-        description: "Generate some rules first!",
+        description: "Generate some guidelines first!",
       });
       return;
     }
-    const markdownContent = `# Community Guidelines
+    const markdownContent = `# Web4 Communitz Guidelines
 
 ## Our Rules
 ${generatedRules.split('\n').map(rule => `- ${rule}`).join('\n')}
 
 ---
-*These rules were generated with Guildelines AI.*
+*These guidelines were generated with Web4 Communitz Guidelines, powered by Linkspreed.*
 `;
     const blob = new Blob([markdownContent], { type: "text/markdown" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "community-guidelines.md";
+    a.download = "web4-communitz-guidelines.md";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
     toast({
       title: "Markdown Downloaded!",
-      description: "Your community guidelines are ready.",
+      description: "Your Web4 Communitz guidelines are ready.",
     });
   };
 
@@ -175,9 +175,9 @@ ${generatedRules.split('\n').map(rule => `- ${rule}`).join('\n')}
     <div className="container mx-auto p-4 md:p-8 max-w-4xl">
       <Card className="shadow-xl">
         <CardHeader>
-          <CardTitle className="text-3xl font-headline text-center">Create Your Community Guidelines</CardTitle>
+          <CardTitle className="text-3xl font-headline text-center">Create Your Web4 Communitz Guidelines</CardTitle>
           <CardDescription className="text-center">
-            Use AI to generate a starting point for your community rules. Choose tags or describe your community.
+            Use AI to generate a starting point for your Web4 Communitz rules. Choose tags or describe your community.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -259,20 +259,20 @@ ${generatedRules.split('\n').map(rule => `- ${rule}`).join('\n')}
           <Separator className="my-8" />
 
           <div className="space-y-4">
-            <Label htmlFor="generatedRules" className="text-lg">Generated Rules</Label>
+            <Label htmlFor="generatedRules" className="text-lg">Generated Guidelines</Label>
             <p className="text-sm text-muted-foreground">
-              Review, edit, and refine the AI-generated rules below. Remember, these are a starting point!
+              Review, edit, and refine the AI-generated guidelines below. Remember, these are a starting point!
             </p>
             {isLoading && (
               <div className="flex items-center justify-center h-48 border rounded-md">
                 <Loader2 className="h-8 w-8 animate-spin text-primary" />
-                <p className="ml-2 text-muted-foreground">Generating rules...</p>
+                <p className="ml-2 text-muted-foreground">Generating guidelines...</p>
               </div>
             )}
             {!isLoading && !generatedRules && (
                <div className="flex flex-col items-center justify-center h-48 border border-dashed rounded-md p-4 text-center">
                 <ListChecks className="h-12 w-12 text-muted-foreground mb-2" />
-                <p className="text-muted-foreground">Your generated community guidelines will appear here.</p>
+                <p className="text-muted-foreground">Your generated Web4 Communitz guidelines will appear here.</p>
                 <p className="text-xs text-muted-foreground mt-1">Select tags or use a prompt to get started.</p>
               </div>
             )}
@@ -281,17 +281,17 @@ ${generatedRules.split('\n').map(rule => `- ${rule}`).join('\n')}
                 id="generatedRules"
                 value={generatedRules}
                 onChange={handleRuleChange}
-                placeholder="AI-generated rules will appear here..."
+                placeholder="AI-generated guidelines will appear here..."
                 rows={15}
                 className="resize-y min-h-[200px] p-4 text-sm leading-relaxed bg-card focus:ring-2 focus:ring-primary"
-                aria-label="Generated community rules editor"
+                aria-label="Generated Web4 Communitz guidelines editor"
               />
             )}
           </div>
         </CardContent>
         <CardFooter className="flex flex-col sm:flex-row justify-end gap-2 pt-6">
           <Button variant="outline" onClick={handleCopyToClipboard} disabled={!generatedRules || isLoading}>
-            <ClipboardCopy className="mr-2 h-4 w-4" /> Copy Rules
+            <ClipboardCopy className="mr-2 h-4 w-4" /> Copy Guidelines
           </Button>
           <Button onClick={handleDownloadMarkdown} disabled={!generatedRules || isLoading}>
             <Download className="mr-2 h-4 w-4" /> Download as Markdown
