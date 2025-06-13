@@ -2,6 +2,11 @@
 
 Web4 Community Guidelines is a Next.js application, powered by [Linkspreed](https://linkspreed.com), that leverages the Gemini API via Genkit to generate draft community rule sets for [Web4](https://web4.one) communities. Administrators can select predefined tags or provide a custom prompt to describe their community, and the AI will generate a tailored set of guidelines. These rules can then be reviewed, edited, and exported as a Markdown file, ready for use in GitHub repositories or other platforms.
 
+![image](https://github.com/user-attachments/assets/c63183be-f989-4151-9b5a-1bf5c710faa4)
+![image](https://github.com/user-attachments/assets/576f6def-7470-482d-8323-dd1a94ef0b78)
+
+
+
 ## Features
 
 -   **AI-Powered Rule Generation**: Utilizes the Gemini API to create contextually relevant community rules.
