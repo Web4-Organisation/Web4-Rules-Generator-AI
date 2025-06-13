@@ -1,6 +1,6 @@
-# Web4 Communitz Guidelines
+# Web4 Community Guidelines
 
-Web4 Communitz Guidelines is a Next.js application, powered by [Linkspreed](https://linkspreed.com), that leverages the Gemini API via Genkit to generate draft community rule sets for [Web4](https://web4.one) communities. Administrators can select predefined tags or provide a custom prompt to describe their community, and the AI will generate a tailored set of guidelines. These rules can then be reviewed, edited, and exported as a Markdown file, ready for use in GitHub repositories or other platforms.
+Web4 Community Guidelines is a Next.js application, powered by [Linkspreed](https://linkspreed.com), that leverages the Gemini API via Genkit to generate draft community rule sets for [Web4](https://web4.one) communities. Administrators can select predefined tags or provide a custom prompt to describe their community, and the AI will generate a tailored set of guidelines. These rules can then be reviewed, edited, and exported as a Markdown file, ready for use in GitHub repositories or other platforms.
 
 ## Features
 
@@ -33,8 +33,8 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/web4-communitz-guidelines.git # (You might need to update this if your repo name changed)
-    cd web4-communitz-guidelines
+    git clone https://github.com/your-username/web4-community-guidelines.git # (You might need to update this if your repo name changed)
+    cd web4-community-guidelines
     ```
 
 2.  **Install dependencies:**

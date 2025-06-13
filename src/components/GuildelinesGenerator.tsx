@@ -4,7 +4,7 @@ import { useState, type ChangeEvent, useEffect } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, Controller } from "react-hook-form";
 import { z } from "zod";
-import { ClipboardCopy, Download, ListChecks, Lightbulb, Loader2, AlertTriangle, Sparkles } from "lucide-react";
+import { ClipboardCopy, Download, ListChecks, Lightbulb, Loader2, Sparkles } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -55,7 +55,6 @@ export default function GuildelinesGenerator() {
     },
   });
   
-  // Effect to synchronise local selectedTags state with form state for visual feedback if needed
   useEffect(() => {
     setSelectedTags(tagsForm.watch("selectedPredefinedTags") || []);
   }, [tagsForm.watch("selectedPredefinedTags")]);
@@ -85,7 +84,7 @@ export default function GuildelinesGenerator() {
       setGeneratedRules(result.rules);
       toast({
         title: "Guidelines Generated!",
-        description: "Review and customize your new Web4 Communitz guidelines.",
+        description: "Review and customize your new Web4 Community guidelines.",
       });
     } catch (error) {
       console.error("Error generating rules from tags:", error);
@@ -106,7 +105,7 @@ export default function GuildelinesGenerator() {
       setGeneratedRules(result.rules);
       toast({
         title: "Guidelines Generated!",
-        description: "Review and customize your new Web4 Communitz guidelines.",
+        description: "Review and customize your new Web4 Community guidelines.",
       });
     } catch (error) {
       console.error("Error generating rules from prompt:", error);
@@ -148,26 +147,26 @@ export default function GuildelinesGenerator() {
       });
       return;
     }
-    const markdownContent = `# Web4 Communitz Guidelines
+    const markdownContent = `# Web4 Community Guidelines
 
 ## Our Rules
 ${generatedRules.split('\n').map(rule => `- ${rule}`).join('\n')}
 
 ---
-*These guidelines were generated with Web4 Communitz Guidelines, powered by Linkspreed.*
+*These guidelines were generated with Web4 Community Guidelines, powered by Linkspreed.*
 `;
     const blob = new Blob([markdownContent], { type: "text/markdown" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "web4-communitz-guidelines.md";
+    a.download = "web4-community-guidelines.md";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
     toast({
       title: "Markdown Downloaded!",
-      description: "Your Web4 Communitz guidelines are ready.",
+      description: "Your Web4 Community guidelines are ready.",
     });
   };
 
@@ -175,9 +174,9 @@ ${generatedRules.split('\n').map(rule => `- ${rule}`).join('\n')}
     <div className="container mx-auto p-4 md:p-8 max-w-4xl">
       <Card className="shadow-xl">
         <CardHeader>
-          <CardTitle className="text-3xl font-headline text-center">Create Your Web4 Communitz Guidelines</CardTitle>
+          <CardTitle className="text-3xl font-headline text-center">Create Your Web4 Community Guidelines</CardTitle>
           <CardDescription className="text-center">
-            Use AI to generate a starting point for your Web4 Communitz rules. Choose tags or describe your community.
+            Use AI to generate a starting point for your Web4 Community rules. Choose tags or describe your community.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -272,7 +271,7 @@ ${generatedRules.split('\n').map(rule => `- ${rule}`).join('\n')}
             {!isLoading && !generatedRules && (
                <div className="flex flex-col items-center justify-center h-48 border border-dashed rounded-md p-4 text-center">
                 <ListChecks className="h-12 w-12 text-muted-foreground mb-2" />
-                <p className="text-muted-foreground">Your generated Web4 Communitz guidelines will appear here.</p>
+                <p className="text-muted-foreground">Your generated Web4 Community guidelines will appear here.</p>
                 <p className="text-xs text-muted-foreground mt-1">Select tags or use a prompt to get started.</p>
               </div>
             )}
@@ -284,7 +283,7 @@ ${generatedRules.split('\n').map(rule => `- ${rule}`).join('\n')}
                 placeholder="AI-generated guidelines will appear here..."
                 rows={15}
                 className="resize-y min-h-[200px] p-4 text-sm leading-relaxed bg-card focus:ring-2 focus:ring-primary"
-                aria-label="Generated Web4 Communitz guidelines editor"
+                aria-label="Generated Web4 Community guidelines editor"
               />
             )}
           </div>
